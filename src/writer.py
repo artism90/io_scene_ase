@@ -118,6 +118,7 @@ class ASEWriter(object):
                 submaterial_node.push_child('MATERIAL_NAME').push_datum(material)
                 diffuse_node = submaterial_node.push_child('MAP_DIFFUSE')
                 diffuse_node.push_child('MAP_NAME').push_datum('default')
+                diffuse_node.push_child('BITMAP').push_datum(f'{material}.tga') # Extension doesn't matter (will be stripped off by engine)
                 diffuse_node.push_child('UVW_U_OFFSET').push_datum(0.0)
                 diffuse_node.push_child('UVW_V_OFFSET').push_datum(0.0)
                 diffuse_node.push_child('UVW_U_TILING').push_datum(1.0)
