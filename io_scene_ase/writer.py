@@ -1,6 +1,3 @@
-from .ase import *
-
-
 class ASEFile(object):
     def __init__(self):
         self.commands = []
@@ -195,6 +192,6 @@ class ASEWriter(object):
 
     def write(self, filepath, ase):
         self.indent = 0
-        ase_file = self.build_ase_tree(ase)
         with open(filepath, 'w') as self.fp:
+            ase_file = self.build_ase_tree(ase)
             self.write_file(ase_file)
